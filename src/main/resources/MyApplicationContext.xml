@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="cat"
+          class="com.example.textTask.Cat">
+        <constructor-arg value="Cat"/>
+    </bean>
+
+    <bean id="dog"
+          class="com.example.textTask.Dog">
+        <constructor-arg value="Dog"/>
+    </bean>
+
+    <bean id="parrot1"
+          class="com.example.textTask.Parrot">
+        <constructor-arg value="Parrot1"/>
+    </bean>
+
+    <bean id="parrot2"
+          class="com.example.textTask.Parrot">
+        <constructor-arg value="Parrot2"/>
+    </bean>
+
+    <bean id="person"
+          class="com.example.textTask.Person">
+        <constructor-arg name="name" value="Denis"/>
+        <constructor-arg name="animals">
+            <list>
+                <ref bean="cat" />
+                <ref bean="dog" />
+                <ref bean="parrot1" />
+                <ref bean="parrot2" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
